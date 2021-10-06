@@ -74,6 +74,6 @@ mkdir -p "$(dirname ${TARGET_FILE})"
 while true; do
   echo "# HELP extra_labels like hostname of node" > "${TARGET_FILE}"
   echo "# TYPE extra_labels count" >> "${TARGET_FILE}"
-  echo "extra_labels{hostname=$(cat /etc/hostname)} 0" >> "${TARGET_FILE}"
+  echo "extra_labels{hostname=\"$(cat /etc/hostname)\"} 0" >> "${TARGET_FILE}"
   sleep 30
 done
