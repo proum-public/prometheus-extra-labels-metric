@@ -72,8 +72,8 @@ mkdir -p "$(dirname ${TARGET_FILE})"
 
 # Copy hostname to target
 while true; do
-  echo "# HELP extra_labels like hostname of node" > "${TARGET_FILE}"
-  echo "# TYPE extra_labels gauge" >> "${TARGET_FILE}"
-  echo "extra_labels{hostname=\"$(cat /etc/hostname)\"} 0" >> "${TARGET_FILE}"
+  echo "# HELP extra_node_labels like hostname of node" > "${TARGET_FILE}"
+  echo "# TYPE extra_node_labels gauge" >> "${TARGET_FILE}"
+  echo "extra_node_labels{native_hostname=\"$(cat /etc/hostname)\"} 0" >> "${TARGET_FILE}"
   sleep 30
 done
